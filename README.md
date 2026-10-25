@@ -2,6 +2,8 @@
 
 Zero-trust invoicing platform. The backend and frontend are separate projects with their own dependencies, env files, and READMEs.
 
+Live url   :   https://nexus-billing-one.vercel.app/
+
 ```
 .
 ├── backend/     Node.js, Express, MongoDB, Stripe, pdfkit, nodemailer
