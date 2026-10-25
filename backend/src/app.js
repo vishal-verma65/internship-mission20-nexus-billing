@@ -4,8 +4,13 @@ import mongoose from 'mongoose';
 import { rateLimit } from 'express-rate-limit';
 import invoiceRoutes from './routes/invoices.js';
 import webhookRoutes from './routes/webhooks.js';
+import cors from "cors"
 
 const app = express();
+app.set('trust proxy', 1);
+
+app.use(helmet());
+app.use(cors({ origin: process.env.CLIENT_URL }));
 
 const createLimiter = (limit) =>
   rateLimit({

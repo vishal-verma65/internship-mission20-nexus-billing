@@ -1,4 +1,4 @@
-const API_URL = import.meta.env.VITE_API_URL || '/api';
+const API_URL = import.meta.env.VITE_API_URL || 'https://nexus-billing-72h9.onrender.com/api';
 const TOKEN_KEY = 'nexus_token';
 
 let unauthorizedHandler = () => {};
