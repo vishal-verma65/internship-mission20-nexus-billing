@@ -1,10 +1,10 @@
 import express from 'express';
 import helmet from 'helmet';
+import cors from 'cors';
 import mongoose from 'mongoose';
 import { rateLimit } from 'express-rate-limit';
 import invoiceRoutes from './routes/invoices.js';
 import webhookRoutes from './routes/webhooks.js';
-import cors from "cors"
 
 const app = express();
 app.set('trust proxy', 1);
@@ -24,7 +24,6 @@ const createLimiter = (limit) =>
 const apiLimiter = createLimiter(300);
 const sensitiveLimiter = createLimiter(10);
 
-app.use(helmet());
 
 app.get('/health', (req, res) => {
   const connected = mongoose.connection.readyState === 1;
